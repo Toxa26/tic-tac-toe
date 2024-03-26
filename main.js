@@ -150,11 +150,24 @@ function enterNames() {
 
 		if (!name1) {
 			firstPlayerInput.classList.add('input-error');
+			validationErrorMessage.innerHTML = 'all fields are required*';
 		}
 
 		if (!name2) {
 			secondPlayerInput.classList.add('input-error');
+			validationErrorMessage.innerHTML = 'all fields are required*';
 		}
+
+		return;
+	}
+
+	const sameName = name1.toLowerCase() === name2.toLowerCase();
+
+	if (sameName) {
+		validationErrorMessage.classList.remove('d-none');
+		firstPlayerInput.classList.add('input-error');
+		secondPlayerInput.classList.add('input-error');
+		validationErrorMessage.innerHTML = 'names cannot be the same*';
 
 		return;
 	}

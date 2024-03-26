@@ -395,6 +395,11 @@ input:focus {
 	text-transform: uppercase;
 }
 
+.current-player,
+.time-to-move {
+	min-width: 50%;
+}
+
 .buttons {
 	display: flex;
 }
